@@ -37,7 +37,7 @@ function LanguageSection() {
         <DropdownMenuItem
           onClick={() => handleLanguage("fr")}
           aria-label={t("ariaFrench")}
-          className="flex gap-4"
+          className="flex gap-4 hover:cursor-pointer hover:bg-accent hover:text-accent-foreground"
         >
           <Icons.frenchFlag className="size-6" />
           Français
@@ -45,7 +45,7 @@ function LanguageSection() {
         <DropdownMenuItem
           onClick={() => handleLanguage("en")}
           aria-label={t("ariaEnglish")}
-          className="flex gap-4"
+          className="flex gap-4 hover:cursor-pointer hover:bg-accent hover:text-accent-foreground"
         >
           <Icons.britishFlag className="size-6" />
           English
