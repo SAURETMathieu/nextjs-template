@@ -13,6 +13,7 @@ A Next.js 14 template for building apps with Radix UI and Tailwind CSS.
 - Prettier and ESLint
 - i18n with `next-intl`
 - Notifications with `sonner`
+- 2 navigation models
 
 ## Installation
 
