@@ -49,7 +49,10 @@ export default function RootLayout({
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="relative flex min-h-screen flex-col">
                 <SiteHeader />
-                <main className="flex-1">{children}</main>
+                {/* Add sm:py-4 sm:pl-14 to the main className if you use the header2 model */}
+                <main className="min-h-screen flex-1">
+                  {children}
+                </main>
                 <Toaster />
                 <Footer />
               </div>

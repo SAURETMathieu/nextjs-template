@@ -28,7 +28,7 @@ export default function IndexPage() {
         >
           GitHub
         </Link>
-        <Button onClick={() => toast.error("Error")} variant="destructive">
+        <Button onClick={() => toast.error("Error")} variant="error">
           Error Alert
         </Button>
         <Button onClick={() => toast.success("Success")} variant="success">
