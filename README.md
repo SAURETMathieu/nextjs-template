@@ -4,7 +4,7 @@ A Next.js 14 template for building apps with Radix UI and Tailwind CSS.
 
 ## Features
 
-- Next.js 14 App Directory
+- Next.js 14 Src Directory
 - Radix UI Primitives
 - Tailwind CSS
 - Icons from Lucide
@@ -12,6 +12,7 @@ A Next.js 14 template for building apps with Radix UI and Tailwind CSS.
 - Tailwind CSS class sorting, merging and linting.
 - Prettier and ESLint
 - i18n with `next-intl`
+- Notifications with `sonner`
 
 ## Installation
 
