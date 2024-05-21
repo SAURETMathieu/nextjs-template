@@ -3,4 +3,9 @@ export interface NavItem {
   href?: string;
   disabled?: boolean;
   external?: boolean;
+  icon?: React.ReactNode;
+}
+
+export interface MainNavProps {
+  items?: NavItem[];
 }
