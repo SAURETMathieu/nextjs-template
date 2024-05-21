@@ -1,4 +1,6 @@
+import Footer from "@/src/components/footer/Footer";
 import { SiteHeader } from "@/src/components/header/Header";
+import { Toaster } from "@/src/components/ui/sonner";
 import { ThemeProvider } from "@/src/context/themeProvider";
 import { fontSans } from "@/src/lib/fonts";
 import { cn } from "@/src/lib/utils";
@@ -7,7 +9,6 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import Footer from "@/src/components/footer/Footer";
 
 import { siteConfig } from "@/config/site";
 
@@ -48,7 +49,8 @@ export default function RootLayout({
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="relative flex min-h-screen flex-col">
                 <SiteHeader />
-                <div className="flex-1">{children}</div>
+                <main className="flex-1">{children}</main>
+                <Toaster />
                 <Footer />
               </div>
               <TailwindIndicator />
