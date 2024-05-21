@@ -1,9 +1,9 @@
 import Link from "next/link";
+import LanguageSection from "@/src/components/buttons/languageSelect";
 import { ThemeToggle } from "@/src/components/buttons/themeToggle";
 import { MainNav } from "@/src/components/header/MainNav";
 import { buttonVariants } from "@/src/components/ui/button";
 import { Icons } from "@/src/icons/icons";
-import LanguageSection from "@/src/components/buttons/languageSelect";
 
 import { siteConfig } from "@/config/site";
 
@@ -30,7 +30,7 @@ export function SiteHeader() {
               </div>
             </Link>
             <ThemeToggle />
-            <LanguageSection/>
+            <LanguageSection />
           </nav>
         </div>
       </div>
