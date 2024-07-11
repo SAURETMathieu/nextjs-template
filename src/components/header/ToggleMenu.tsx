@@ -1,17 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
-import NavigationLink from "@/components/link/NavigationLink";
 import { Icons } from "@/src/icons/icons";
 import { PanelLeft } from "lucide-react";
-import { useState } from "react";
+import { useTranslations } from "next-intl";
 
-import { siteConfig } from "@/config/site";
 import { MainNavProps } from "@/types/nav";
+import { siteConfig } from "@/config/site";
+import NavigationLink from "@/components/link/NavigationLink";
 
 export default function ToggleMenu({ items }: MainNavProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("Navbar");
 
   const handleLinkClick = () => {
     setIsOpen(false);
@@ -22,7 +24,7 @@ export default function ToggleMenu({ items }: MainNavProps) {
       <SheetTrigger asChild>
         <Button size="icon" variant="outline" className="sm:hidden">
           <PanelLeft className="size-5" />
-          <span className="sr-only">Toggle Menu</span>
+          <span className="sr-only">{t("openMenuLabel")}</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="sm:max-w-xs">
@@ -31,8 +33,9 @@ export default function ToggleMenu({ items }: MainNavProps) {
             href="/"
             className="is-logo flex items-center justify-center"
             onClick={handleLinkClick}
+            aria-label={t("ariaLogoLink")}
           >
-            <Icons.logo className="size-20" />
+            <Icons.logo className="size-20" aria-label={t("appLogoAlt")} />
             <span className="inline-block font-bold">{siteConfig.name}</span>
           </NavigationLink>
           {items?.map(
