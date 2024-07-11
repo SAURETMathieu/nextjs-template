@@ -5,14 +5,14 @@ import { Icons } from "@/src/icons/icons";
 import { Globe } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-import { useRouter, usePathname } from "../../navigation";
-import { Button } from "../ui/button";
+import { useRouter, usePathname } from "@/src/navigation";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 function LanguageSection() {
   const locale = useLocale();
