@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Button } from "@/src/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/src/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icons } from "@/src/icons/icons";
 import { PanelLeft } from "lucide-react";
 
@@ -23,10 +23,10 @@ export default function ToggleMenu({ items }: MainNavProps) {
             <span className="inline-block font-bold">{siteConfig.name}</span>
           </Link>
           {items?.map(
-            (item, index) =>
+            (item) =>
               item.href && (
                 <Link
-                  key={index}
+                  key={item.title}
                   href={item.href}
                   className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                 >
