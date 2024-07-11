@@ -48,6 +48,10 @@
     --ring: 229 100% 62%;
     --radius: 0.5rem;
   }
+
+  [aria-current="page"]:not(.is-logo) {
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer base {
@@ -57,5 +61,11 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@media (max-width: 374px) {
+  body {
+    zoom: 0.9;
   }
 }
