@@ -1,4 +1,15 @@
 {
+  "TitlePages": {
+    "home": "Home - Roulette",
+    "tables": "Tables",
+    "dealers": "Dealers",
+    "draws": "Draws"
+  },
+  "LocaleMetadata":{
+    "title": "Roulette",
+    "name": "Template Application Nextjs",
+    "description": "Template Application Nextjs with TailwindCSS, TypeScript, ESLint, Prettier, React, i18next, Dark Mode, Notifications, SEO, 2 Navigation models."
+  },
   "IndexPage": {
     "title": "Nextjs template app",
     "description": "This is a template app made with Nextjs, Tailwindcss, TypeScript, ESLint, Prettier, React, i18next, Dark Mode, Notifications, SEO, 2 Navigation models."

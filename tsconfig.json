@@ -15,7 +15,18 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/src/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/pages/*": ["src/components/pages/*"],
+      "@/config/*": ["./config/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/types/*": ["./types/*"],
+      "@/public/*": ["./public/*"]
     },
     "plugins": [
       {

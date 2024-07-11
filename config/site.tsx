@@ -1,6 +1,8 @@
-import { Home, ShoppingCart, Settings, Info } from "lucide-react";
+import { Home, UsersRound, Settings, Info, Dices, LifeBuoy, AlarmClockPlus } from "lucide-react";
 
 export type SiteConfig = typeof siteConfig;
+
+import { NavItem } from "@/types/nav";
 
 export const siteConfig = {
   name: "",
@@ -13,11 +15,26 @@ export const siteConfig = {
       icon: <Home className="size-5" />,
     },
     {
-      title: "Shop",
-      href: "/orders",
-      icon: <ShoppingCart className="size-5" />,
+      title: "Tables",
+      href: "/tables",
+      icon: <LifeBuoy className="size-5" />,
     },
-  ],
+    {
+      title: "Dealers",
+      href: "/dealers",
+      icon: <UsersRound className="size-5" />,
+    },
+    {
+      title: "Sessions",
+      href: "/sessions",
+      icon: <AlarmClockPlus className="size-5" />,
+    },
+    {
+      title: "Draws",
+      href: "/draws",
+      icon: <Dices className="size-5" />,
+    },
+  ] as NavItem[],
   secondaryNav: [
     {
       title: "Help",
@@ -29,8 +46,5 @@ export const siteConfig = {
       href: "/settings",
       icon: <Settings className="size-5" />,
     },
-  ],
-  links: {
-    github: "https://github.com/SAURETMathieu",
-  },
+  ] as NavItem[],
 };
