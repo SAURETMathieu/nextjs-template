@@ -5,7 +5,7 @@ import { Icons } from "@/src/icons/icons";
 import { Globe } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-import { useRouter } from "../../navigation";
+import { useRouter, usePathname } from "../../navigation";
 import { Button } from "../ui/button";
 import {
   DropdownMenu,
@@ -19,9 +19,13 @@ function LanguageSection() {
   const [language, setLanguage] = useState(locale);
   const t = useTranslations("ThemeSwitcher");
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleLanguage = (newLanguage: string) => {
-    router.replace(`/`, { locale: newLanguage });
+    router.replace(
+      {pathname},
+      {locale: newLanguage}
+    );
     setLanguage(newLanguage);
   };
 
