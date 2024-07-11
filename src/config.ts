@@ -5,12 +5,18 @@ export const locales = ['fr', 'en'] as const;
 
 export const pathnames = {
   '/': '/',
-  '/tables': '/tables',
+  '/tables': {
+    en: '/tables',
+    fr: '/tables'
+  },
   '/dealers': {
     en: '/dealers',
     fr: '/croupiers'
   },
-  '/session': '/sessions',
+  '/session': {
+    en: '/session',
+    fr: '/session'
+  },
   '/draws': {
     en: '/draws',
     fr: '/tirages'
@@ -23,17 +29,38 @@ export const pathnames = {
     en: '/settings',
     fr: '/parametres'
   },
-  '/about': '/about',
-  '/contact': '/contact',
-  '/login': '/login',
-  '/register': '/register',
-  '/forgot-password': '/forgot-password',
-  '/reset-password': '/reset-password',
+  '/about': {
+    en: '/about',
+    fr: '/a-propos'
+  },
+  '/contact': {
+    en: '/contact',
+    fr: '/contact'
+  },
+  '/login': {
+    en: '/login',
+    fr: '/connexion'
+  },
+  '/register': {
+    en: '/register',
+    fr: '/inscription'
+  },
+  '/forgot-password': {
+    en: '/forgot-password',
+    fr: '/forgot-password'
+  },
+  '/reset-password': {
+    en: '/reset-password',
+    fr: '/reset-password'
+  },
   '/profile': {
     en: '/profile',
     fr: '/profil'
   },
-  '/support': '/support',
+  '/support': {
+    en: '/support',
+    fr: '/support'
+  },
 } satisfies Pathnames<typeof locales>;
 
 export const localePrefix = "always";
