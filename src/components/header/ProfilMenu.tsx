@@ -8,17 +8,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
-import {
-  getTranslations,
-  getLocale
-} from "next-intl/server";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import LogOutButton from "@/components/buttons/logoutButton";
 import NavigationLink from "@/components/link/NavigationLink";
 
-export default async function ProfilMenu() {
-  const t = await getTranslations({ getLocale, namespace: "Navbar" });
+export default function ProfilMenu() {
+  const t = useTranslations("Navbar");
   //const session = await auth();
   const session = null;
 
