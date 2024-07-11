@@ -5,27 +5,52 @@ import { ThemeProvider } from "@/src/context/themeProvider";
 import { fontSans } from "@/src/lib/fonts";
 import { cn } from "@/src/lib/utils";
 import { TailwindIndicator } from "@/src/utils/tailwindIndicator";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from "next-intl/server";
 
 import "@/styles/globals.css";
+import { ReactNode } from "react";
+import { locales } from "@/src/config";
 import { Metadata } from "next";
 
-import { siteConfig } from "@/config/site";
-
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
+type Props = {
+  children: ReactNode;
+  params: { locale: string };
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params: { locale },
+}: Omit<Props, "children">): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "LocaleMetadata" });
+  return {
+    title: {
+      default: t("title"),
+      template: "%s - " + t("title"),
+    },
+    description: t("description"),
+    applicationName: t("name"),
+    keywords: ['Next.js', 'React', 'JavaScript'],
+    authors: [{ name: 'Mathieu SAURET', url: '' }],
+    creator: 'Mathieu SAURET',
+    publisher: 'Mathieu SAURET',
+    //publishedTime: '2023-01-01T00:00:00.000Z',
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/favicon.ico",
+    },
+  };
+}
+
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
@@ -34,7 +59,8 @@ export default function RootLayout({
     locale: string;
   };
 }>) {
-  const messages = useMessages();
+  unstable_setRequestLocale(locale);
+  const messages = await getMessages();
   return (
     <>
       <html lang={locale} suppressHydrationWarning>
@@ -49,8 +75,7 @@ export default function RootLayout({
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="relative flex min-h-screen flex-col">
                 <SiteHeader />
-                {/* Add sm:py-4 sm:pl-14 to the main className if you use the header2 model */}
-                <main className="min-h-screen flex-1">
+                <main className="min-h-screen flex-1 sm:py-4 sm:pl-14">
                   {children}
                 </main>
                 <Toaster />
