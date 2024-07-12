@@ -33,8 +33,8 @@ export default function BreadcrumbSection() {
   const currentPathNamesTranslated = currentPathNames
     ?.map((name: string) => {
       if (pathnames[("/" + name) as keyof typeof pathnames]) {
-        //@ts-ignore
         return (
+          //@ts-ignore
           pathnames[("/" + name) as keyof typeof pathnames][locale] ?? name
         );
       }
